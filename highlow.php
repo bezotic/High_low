@@ -1,6 +1,25 @@
 <?php
+// Dump arg count
+var_dump($argc);
+// Dump arg vars
+var_dump($argv);
 
-$random = mt_rand(1, 100);
+
+
+if ($argc == 3) {
+	$min = $argv[1];
+	$max = $argv[2];
+	
+} else {
+	fwrite(STDOUT, "NO add another parameter\n");
+}
+
+
+
+
+$random = mt_rand($min, $max);
+
+
 fwrite(STDOUT, " Guess a number\n ");
 
 
