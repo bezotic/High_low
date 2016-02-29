@@ -6,14 +6,16 @@ fwrite(STDOUT, " Guess a number\n ");
 
 do {
 
-	$number = fgets(STDIN);
-	$number_pressed = trim($number);
-	if ($number_pressed < $random) {
+	$number = trim(fgets(STDIN));
+	
+	if ($number < $random) {
 		fwrite(STDOUT, "Higher\n");
-	} else if ($number_pressed > $random) {
+		fwrite(STDOUT, " Guess? ");
+	} else if ($number > $random) {
 		fwrite(STDOUT, "lower\n");
+		fwrite(STDOUT, " Guess? ");
 	} 
-	else if ($number_pressed == $random) {
+	else {
 		fwrite(STDOUT, "YOU did IT!");
 	}
 
